@@ -1,26 +1,30 @@
- /**
+import java.util.ArrayList;
+
+/**
  * Ruutu edustaa yhtä labyrintin ruutua
+ *
  * @author Mirka
  */
 public class Ruutu {
-    
+
     /**
      * ttt
      */
     private boolean walls[];
 
     /**
-     *ttt
+     * ttt
      */
     private int x;
 
     /**
-     *ttt
+     * ttt
      */
     private int y;
 
     /**
      * Ruudun konstruktori luo Ruudun, jolla on 3 seinää
+     *
      * @param y palauttaa y-koordinaatin
      * @param x x-koordinaatin
      */
@@ -49,7 +53,7 @@ public class Ruutu {
     public int getY() {
         return this.y;
     }
-    
+
     /**
      *
      * @return palauttaa tämän ruudun seinät
@@ -57,20 +61,20 @@ public class Ruutu {
     public boolean[] getWalls() {
         return this.walls;
     }
-    
+
     /**
      * Poistaa halutun seinän, seinän omasta taulukosta
-     * @param i Viittaa haluttuun seinään (0 = vasen, 1 = ala ja 2 = oikea seinä)
+     *
+     * @param i Viittaa haluttuun seinään (0 = vasen, 1 = ala ja 2 = oikea
+     * seinä)
      */
-    
     public void poistaSeina(int i) {
         this.walls[i] = false;
     }
-    
+
     /**
      * Tulostaa tämän ruudun seinät ja mahdolliset kulkuaukot
      */
-
     public void tulostaRuutu() {
 
         if (this.walls[0]) {
@@ -90,5 +94,12 @@ public class Ruutu {
         } else {
             System.out.print(" ");
         }
+    }
+
+    public boolean equals(Ruutu r) {
+        if (this.x == r.getX() && this.y == r.getY()) {
+            return true;
+        }
+        return false;
     }
 }

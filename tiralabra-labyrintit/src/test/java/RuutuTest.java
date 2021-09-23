@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
  * Testiluokka Ruudulle
  * @author Mirka
  */
+
 public class RuutuTest {
     
     /**

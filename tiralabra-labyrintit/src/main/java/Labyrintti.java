@@ -33,8 +33,12 @@ public class Labyrintti {
         for (int i = 0; i < leveys; i++) {
             for (int j = 0; j < korkeus; j++) {
                 lab[i][j] = new Ruutu(i, j);
-            }
+            }  
         }
+    }
+    
+    public Ruutu getRuutu(int y, int x) {
+        return this.lab[y][x];
     }
     
     
