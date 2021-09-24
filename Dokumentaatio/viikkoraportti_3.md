@@ -7,4 +7,4 @@ Mitään sen suurempia ongelmia ei projektin kanssa ole syntynyt torstain zoom-p
 
 Ensi viikolla toivon ehtiväni korjaamaan Wilsonin algoritmin, ja aloittamaan omien tietorakenteiden koodaamista. Myös puuttuvien testien kirjoittaminen on tehtävissä.
 
-Tuntimäärä n. 12h
+Tuntimäärä n. 12 h
