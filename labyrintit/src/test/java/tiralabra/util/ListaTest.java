@@ -58,6 +58,10 @@ public class ListaTest {
         } 
     }
     
+    /**
+     * Testaa poista metodia luokasta Lista
+     * Arvoja ei poistu, jos listalta poistetaan arvo, joka siellä ei ole.
+     */
     @Test
     public void testEiPoista() {
         System.out.println("eiPoista");
@@ -94,6 +98,10 @@ public class ListaTest {
         
     }
     
+    /**
+     * Testaa arvo metodia luokasta Lista.
+     * Palauttaa null, jos indeksi on listan ulkopuolelta.
+     */
     @Test
     public void testArvoListanUlkopuolella() {
         assertNull(lista.arvo(11));
@@ -101,6 +109,7 @@ public class ListaTest {
 
     /**
      * Testaa sisaltaa metodia luokasta Lista.
+     * Palauttaa true, jos lista sisältää arvon.
      */
     @Test
     public void testSisaltaa() {
@@ -110,6 +119,10 @@ public class ListaTest {
         assertEquals(odotettu, tulos);  
     }
     
+    /**
+     * Testaa sisaltaa metodia luokasta Lista.
+     * Palauttaa false kun listalla ei ole arvoa.
+     */
     @Test
     public void testEiSisalla() {
         System.out.println("sisaltaa");
@@ -130,6 +143,10 @@ public class ListaTest {
         assertEquals(odotettu, tulos);
     }
     
+    /**
+     * Testaa onTyhja metodia luokasta Lista.
+     * Tarkistaa toimiiko, oikein jos lista on tyhjä.
+     */
     @Test
     public void testEiOleTyhja() {
         System.out.println("eiOleTyhja");

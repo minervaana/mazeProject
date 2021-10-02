@@ -93,6 +93,10 @@ public class Lista<T> {
         return arvonIndeksi(arvo) >= 0;
     }
 
+    /**
+     * Tarkistaa onko lista tyhjä
+     * @return tosi jos lista on tyhjä, muuten false.
+     */
     public boolean onTyhja() {
         return this.arvoja == 0;
     }

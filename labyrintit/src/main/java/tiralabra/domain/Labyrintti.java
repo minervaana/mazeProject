@@ -3,7 +3,6 @@ package tiralabra.domain;
 import java.util.Random;
 import tiralabra.util.Pari;
 import tiralabra.util.Lista;
-//https://people.cs.ksu.edu/~ashley78/wiki.ashleycoleman.me/index.php/Wilson's_Algoritm.html
 
 /**
  * Labyrintin konstruktori, sisältää myös algoritmit
@@ -102,6 +101,18 @@ public class Labyrintti {
             }
         }
     }
+    
+    /**
+     * Luo sisäänkäynnit labyrinttiin.
+     * Vasen ylä- ja oikea alanurkka.
+     */
+    public void luoSisaankaynnit() {
+        Ruutu alku = this.lab[0][0];
+        Ruutu loppu = this.lab[korkeus - 1][leveys - 1];
+        
+        alku.poistaSeina(0);
+        loppu.poistaSeina(2);
+    }
 
     /**
      * Suorittaa sideWinder-algoritmin tälle labyrintille ja tulostaa ruudulle
@@ -111,10 +122,7 @@ public class Labyrintti {
         Random random = new Random();
         int startti = 0;
 
-        Ruutu alku = this.lab[0][0];
-        Ruutu loppu = this.lab[korkeus - 1][leveys - 1];
-        alku.poistaSeina(0);
-        loppu.poistaSeina(2);
+        luoSisaankaynnit();
 
         for (int i = 0; i < this.korkeus; i++) {
             startti = 0;
@@ -145,6 +153,8 @@ public class Labyrintti {
      * kävelyn perusteella
      */
     public void wilsons() {
+
+        luoSisaankaynnit();
 
         int[][] polku = new int[this.korkeus][this.leveys];
         Boolean[][] visited = new Boolean[this.korkeus][this.leveys];
@@ -193,11 +203,11 @@ public class Labyrintti {
                 }
 
             }
-            
+
             Ruutu seuraava = alustus;
-            
+
             while (true) {
-                
+
                 int suunta = polku[seuraava.getY()][seuraava.getX()];
 
                 switch (suunta) {

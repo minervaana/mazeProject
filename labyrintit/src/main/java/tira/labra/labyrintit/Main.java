@@ -2,7 +2,6 @@ package tira.labra.labyrintit;
 
 import tiralabra.domain.Labyrintti;
 import java.util.Scanner;
-//http://weblog.jamisbuck.org/2011/2/3/maze-generation-sidewinder-algorithm.html#
 
 /**
  *
@@ -17,18 +16,22 @@ public class Main {
     public static void main(String[] args) {
         
         Scanner l = new Scanner(System.in);
-        System.out.print("Koko: ");
+        System.out.print("Kirjoita tähän luotavan labyrintin korkeus: ");
         int size = Integer.valueOf(l.nextLine());
-        Labyrintti lab = new Labyrintti(size);
         
-        lab.tulosta();
+        Labyrintti lab1 = new Labyrintti(size);
+        lab1.tulosta();
+        System.out.println("");
+        System.out.println("Luodaan labyrintti sidewinder algoritmia käyttäen");
         System.out.println("");
         
-        lab.sideWinder();
+        lab1.sideWinder();
         System.out.println("");
         
-        Labyrintti laby = new Labyrintti(size);
-        laby.wilsons();
+        System.out.println("Luodaan labyrintti käyttäen Wilsonin algoritmia");
+        System.out.println("");
+        Labyrintti lab2 = new Labyrintti(size);
+        lab2.wilsons();
         
     }
     
