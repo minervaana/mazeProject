@@ -1,3 +1,3 @@
 # Testikattavuusraportti
 
-[Testikattavuus](./Mirka/mazeProject/labyrintit/target/site/jacoco/index.html)
+[Testikattavuus](../mazeProject/labyrintit/target/site/jacoco/index.html)
