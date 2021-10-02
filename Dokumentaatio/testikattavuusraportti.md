@@ -1,3 +1,3 @@
 # Testikattavuusraportti
 
-![Testikattavuus](C:\Users\Mirka\Pictures\Testikattavuus_sc)
+[Testikattavuus](file:///C:/Users/Mirka/mazeProject/labyrintit/target/site/jacoco/index.html)
