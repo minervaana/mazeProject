@@ -25,7 +25,11 @@ Pystyn arvioimaan myös Pythonia
 ## Lähteet:
 
 [Maze generation algorithm, Wikipedia](https://en.wikipedia.org/wiki/Maze_generation_algorithm)
+
 [Loop erased random walk, Wikipedia](https://en.wikipedia.org/wiki/Loop-erased_random_walk)
+
 [Wilson's algorithm, Buckblog](https://weblog.jamisbuck.org/2011/1/20/maze-generation-wilson-s-algorithm)
+
 [sidewinder algorithm, Buckblog](http://weblog.jamisbuck.org/2011/2/3/maze-generation-sidewinder-algorithm.html)
+
 [Arraylist, Mooc](https://ohjelmointi-19.mooc.fi/osa-11/2-arraylist-ja-hajautustaulu)
