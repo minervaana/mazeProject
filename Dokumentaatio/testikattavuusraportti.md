@@ -1,3 +1,3 @@
 # Testikattavuusraportti
 
-[Testikattavuus](../labyrintit/target/site/jacoco/index.html)
+[Testikattavuus](..\labyrintit\target\site\jacoco\index.html)
