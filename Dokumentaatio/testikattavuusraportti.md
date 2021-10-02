@@ -1,3 +1,3 @@
 # Testikattavuusraportti
 
-![Testikattavuus](/Pictures/Testikattavuus_sc.PNG)
+[Testikattavuus](https://github.com/karppienkingi/mazeProject/blob/main/Dokumentaatio/Pictures/Testikattavuus_sc.PNG)
