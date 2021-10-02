@@ -58,7 +58,7 @@ public class Ruutu {
      *
      * @return palauttaa tämän ruudun seinät
      */
-    public boolean[] getWalls() {
+    public boolean[] getSeinat() {
         return this.walls;
     }
 
@@ -101,10 +101,7 @@ public class Ruutu {
      * @param r vertailtava ruutu
      * @return palauttaa true jos on ja false jos ei ole sama ruutu
      */
-    public boolean equals(Ruutu r) {
-        if (this.x == r.getX() && this.y == r.getY()) {
-            return true;
-        }
-        return false;
+    public boolean onSama(Ruutu r) {
+        return this.x == r.getX() && this.y == r.getY();
     }
 }

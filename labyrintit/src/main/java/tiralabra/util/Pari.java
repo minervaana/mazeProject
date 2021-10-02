@@ -16,14 +16,14 @@ public class Pari {
     /**
      * suunta
      */
-    private Character suunta;
+    private Integer suunta;
     
     /**
      *
      * @param r Pariin kuuluva ruutu
      * @param suunta Pariin kuuluva suunta
      */
-    public Pari(Ruutu r, Character suunta) {
+    public Pari(Ruutu r, Integer suunta) {
         this.r = r;
         this.suunta = suunta;
     }
@@ -40,7 +40,7 @@ public class Pari {
      *
      * @return palauttaa suunnan
      */
-    public Character getSuunta() {
+    public Integer getSuunta() {
         return this.suunta;
     }
     

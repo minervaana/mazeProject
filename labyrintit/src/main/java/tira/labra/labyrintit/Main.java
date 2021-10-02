@@ -25,6 +25,7 @@ public class Main {
         System.out.println("");
         
         lab.sideWinder();
+        System.out.println("");
         
         Labyrintti laby = new Labyrintti(size);
         laby.wilsons();
