@@ -59,7 +59,7 @@ public class RuutuTest {
      */
     @Test
     public void testGetSeinat() {
-        System.out.println("getWalls");
+        System.out.println("getSeinat");
         boolean[] odotettu = {true, true, true};
         boolean[] tulos = r.getSeinat();
         assertArrayEquals(odotettu, tulos);
@@ -70,11 +70,34 @@ public class RuutuTest {
      */
     @Test
     public void testOnSama() {
-        System.out.println("equals");
+        System.out.println("OnSama");
         Ruutu uusi = new Ruutu(2,3);
         boolean sama = r.onSama(uusi);
         
         assertEquals(true, sama);
+    }
+    
+    /**
+     * Testaa onSama metodia luokasta Ruutu.
+     * Varmistaa, että metodi palauttaa false, jos ruutu ei ole sama.
+     */
+    @Test
+    public void testEiOleSama() {
+        System.out.println("EiOleSama");
+        Ruutu uusi = new Ruutu(3,2);
+        boolean sama = r.onSama(uusi);
+        
+        assertEquals(false, sama);
+        
+        uusi = new Ruutu(2,4);
+        sama = r.onSama(uusi);
+        
+        assertEquals(false, sama);
+        
+        uusi = new Ruutu(3,3);
+        sama = r.onSama(uusi);
+        
+        assertEquals(false, sama);
     }
     
 }
