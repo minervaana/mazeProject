@@ -56,8 +56,8 @@ public class Main {
             System.out.println("");
         }
 
-        Testeri t = new Testeri();
-        t.testaaTehokkuudet();
+        //Testeri t = new Testeri(); tehokkuustestit, jos haluat testata poista kauttamerkit
+        //t.testaaTehokkuudet();
 
     }
 
