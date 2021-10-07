@@ -60,7 +60,7 @@ public class LabyrinttiTest {
     @Test
     public void testSidewinder() {
         System.out.println("sideWinder");
-        Labyrintti l = new Labyrintti(10);
+        Labyrintti l = new Labyrintti(100);
         l.sideWinder();
 
         Ruutu alku = l.getRuutu(0, 0);
@@ -132,7 +132,7 @@ public class LabyrinttiTest {
     @Test
     public void testWilsons() {
         System.out.println("wilsons");
-        Labyrintti l = new Labyrintti(10);
+        Labyrintti l = new Labyrintti(100);
         l.wilsons();
 
         Ruutu alku = l.getRuutu(0, 0);

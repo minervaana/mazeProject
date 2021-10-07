@@ -54,6 +54,7 @@
                 <configuration>
                     <excludes>
                         <exclude>tira/labra/labyrintit/*</exclude>
+                        <exclude>tiralabra/util/Testeri.class</exclude>;
                     </excludes>
                 </configuration>
                     <version>0.8.3</version>

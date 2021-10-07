@@ -145,7 +145,6 @@ public class Labyrintti {
             }
         }
 
-        tulosta();
     }
 
     /**
@@ -243,7 +242,5 @@ public class Labyrintti {
                 }
             }
         }
-
-        tulosta();
     }
 }
