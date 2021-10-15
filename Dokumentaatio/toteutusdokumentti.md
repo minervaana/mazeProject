@@ -10,8 +10,8 @@ tiralabra.domain sisältää Labyrintti- ja Ruutuluokan, jotka toteuttavat proje
 
 tiralabra.util sisältää tietorakenteen Lista ja Pariluokan, joita käytetään Labyrintin algoritmien toteutuksessa. Tähän pakettiin kuuluu myös tehokkuustestaamiseen kuuluva luokka Testeri.
 ```
-![W&S-kaavio](./Pictures/Kaaviot/W&S)
+![W&S-kaavio](./Pictures/Kaaviot/W&S.png)
 
-![W-kaavio](./Pictures/Kaaviot/W)
+![W-kaavio](./Pictures/Kaaviot/W.png)
 
-![S-kaavio](./Pictures/Kaaviot/S)
+![S-kaavio](./Pictures/Kaaviot/S.png)
