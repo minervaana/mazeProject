@@ -17,9 +17,9 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner l = new Scanner(System.in);
-        boolean run = true;
+        boolean aja = false;
 
-        while (run) {
+        while (aja) {
             System.out.print("Kirjoita tähän luotavan labyrintin korkeus: ");
             int size = Integer.valueOf(l.nextLine());
             Labyrintti lab = new Labyrintti(size);
@@ -51,13 +51,13 @@ public class Main {
             System.out.println("Haluatko lopettaa? (Kyllä, Ei)");
             String vastaus = l.nextLine();
             if (vastaus.equals("Kyllä")) {
-                run = false;
+                aja = false;
             }
             System.out.println("");
         }
 
-        //Testeri t = new Testeri(); tehokkuustestit, jos haluat testata poista kauttamerkit
-        //t.testaaTehokkuudet();
+        Testeri t = new Testeri(); //tehokkuustestit, jos haluat testata poista kauttamerkit
+        t.testaaTehokkuudet();
 
     }
 

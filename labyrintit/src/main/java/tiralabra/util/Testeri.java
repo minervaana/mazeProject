@@ -18,7 +18,7 @@ public class Testeri {
      * Konstruktori, joka alustaa input-taulukon.
      */
     public Testeri() {
-        this.inputs = new int[]{10, 100, 1000, 5000};
+        this.inputs = new int[]{10, 100, 1000, 2500, 5000, 6000};
 
     }
 
