@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner l = new Scanner(System.in);
-        boolean aja = false;
+        boolean aja = true;
 
         while (aja) {
             System.out.print("Kirjoita tähän luotavan labyrintin korkeus: ");
@@ -56,8 +56,8 @@ public class Main {
             System.out.println("");
         }
 
-        Testeri t = new Testeri(); //tehokkuustestit, jos haluat testata poista kauttamerkit
-        t.testaaTehokkuudet();
+        //Testeri t = new Testeri(); //tehokkuustestit, jos haluat testata poista kauttamerkit
+        //t.testaaTehokkuudet();
 
     }
 
