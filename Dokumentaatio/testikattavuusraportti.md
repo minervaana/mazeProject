@@ -36,4 +36,4 @@ Mikäli haluat suorittaa tehokkuustestit omalla koneellasi, lisää nämä rivit
 >t.testaaTehokkuudet();
 
 Linkki vertailuun tulossa.
->>>>>>> 1756112a310e1733a11414cbf2691dc81d404704
+
