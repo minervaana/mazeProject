@@ -26,7 +26,9 @@ Mikäli haluat suorittaa tehokkuustestit omalla koneellasi, lisää nämä rivit
 >t.testaaTehokkuudet();
 
 ## Vertailu
-    Alla olevassa taulukossa näkyy labyrinttien koot ja niiden generoimiseen kuluva aika mikrosekunteina kummallakin algoritmilla. Tätä on havainnoillistettu myös alempana olevan kaavion avulla, jossa wilsonin algoritmi on merkattu kirjaimella W ja sidewinder algoritmia kirjaimella S.
+    Alla olevassa taulukossa näkyy labyrinttien koot ja niiden generoimiseen kuluva aika mikrosekunteina 
+    kummallakin algoritmilla. Tätä on havainnoillistettu myös alempana olevan kaavion avulla, 
+    jossa wilsonin algoritmi on merkattu kirjaimella W ja sidewinder algoritmia kirjaimella S.
 
 
 | Koko     | Wilsons (mikrosekunti)    | Sidewinder (mikrosekunti)|
@@ -41,19 +43,25 @@ Mikäli haluat suorittaa tehokkuustestit omalla koneellasi, lisää nämä rivit
 
 ![W&S-kaavio](./Pictures/Kaaviot/W&S.png)
 
-    Kuten taulukosta ja kaaviosta huomaa, sidewinder algoritmi on huomattavasti tehokkaampi algoritmi labyrintin generoimisessa. Tämä johtuu siitä, että sidewinder joutuu käymään ainoastaan kerran jokaisen labyrintin ruudun läpi luodessaan sokkeloa. Sidewinderin aikavaatimus on siis O(n^2).
+    Kuten taulukosta ja kaaviosta huomaa, sidewinder algoritmi on huomattavasti tehokkaampi algoritmi labyrintin 
+    generoimisessa. Tämä johtuu siitä, että sidewinder joutuu käymään ainoastaan kerran jokaisen 
+    labyrintin ruudun läpi luodessaan sokkeloa. Sidewinderin aikavaatimus on siis O(n^2).
     
-    Wilsonin algoritmi puolestaan luo sokkelon päättömän kävelyn perusteella ja luo polkua sitä mukaa, kun se löytää jo lopulliseen labyrinttiin liitetyn ruudun. Wilsonin algoritmilla voi siis periaatteessa mennä äärettömän kauan aikaa luoda labyrintti, sillä se voi päättömän kävelynsä aikana käydä monta kertaa samassa ruudussa.
+    Wilsonin algoritmi puolestaan luo sokkelon päättömän kävelyn perusteella ja luo polkua sitä mukaa, kun se löytää jo 
+    lopulliseen labyrinttiin liitetyn ruudun. Wilsonin algoritmilla voi siis periaatteessa mennä 
+    äärettömän kauan aikaa luoda labyrintti, sillä se voi päättömän kävelynsä aikana käydä monta kertaa samassa ruudussa.
 
     Alla on vielä erikseen kaaviot molemmista algoritmeista.
 
 ![W-kaavio](./Pictures/Kaaviot/W.png)
 
-    Pienimmillä koilla wilsonin algoritmi suoriutuu vielä kohtuullisen hyvin, sillä todennököisyydet "kävellä" lopullisessa labyrintissä olevaan ruutuun on suuremmat. 
+    Pienimmillä koilla wilsonin algoritmi suoriutuu vielä kohtuullisen hyvin, 
+    sillä todennököisyydet "kävellä" lopullisessa labyrintissä olevaan ruutuun on suuremmat. 
 
 ![S-kaavio](./Pictures/Kaaviot/S.png)
 
-    Kuten jo aikaisemmin mainittiin, sidewinder käy kerran jokaisen ruudun läpi, jolloin labyrintin generoimisaika ei kasva eksponentiaalisesti.
+    Kuten jo aikaisemmin mainittiin, sidewinder käy kerran jokaisen ruudun läpi, 
+    jolloin labyrintin generoimisaika ei kasva eksponentiaalisesti.
 
 
 
@@ -63,16 +71,22 @@ Mikäli haluat suorittaa tehokkuustestit omalla koneellasi, lisää nämä rivit
 
 ![Originaali labyrintti](./Pictures/Labyrintit/labO.png)
 
-    Ennen algoritmin luomista labyrintti on ylläolevan kuvan mukainen; jokaisella ruudulla on kaikki kolme seinää (itäinen, eteläinen ja läntinen seinä) pystyssä. Valitun algoritmin suorittaminen poistaa halutut seinät sokkelon mukaan.
+    Ennen algoritmin luomista labyrintti on ylläolevan kuvan mukainen; 
+    jokaisella ruudulla on kaikki kolme seinää (itäinen, eteläinen ja läntinen seinä) pystyssä. 
+    Valitun algoritmin suorittaminen poistaa halutut seinät sokkelon mukaan.
 
 ## Sidewinder
 
 ![Sidewinder labyrintti](./Pictures/Labyrintit/labS.png)
     
-    Sidewinder algoritmi käy jokaisen ruudun labyrintissä läpi ja päättää kaivetaanko polkua ylöspäin vai oikealle. Tästä syystälabyrintin ensimmäinen rivi on aina suora käytävä. Toinen ongelma sidewinder algoritmin kanssa on, että se on helposti ratkaistavissa kuljettaessa alhaalta ylöspäin, sillä labyrintti ei sisällä umpikujia ylöspäin kuljettaessa.
+    Sidewinder algoritmi käy jokaisen ruudun labyrintissä läpi ja päättää kaivetaanko polkua ylöspäin vai oikealle. 
+    Tästä syystälabyrintin ensimmäinen rivi on aina suora käytävä. 
+    Toinen ongelma sidewinder algoritmin kanssa on, että se on helposti ratkaistavissa kuljettaessa alhaalta ylöspäin, 
+    sillä labyrintti ei sisällä umpikujia ylöspäin kuljettaessa.
 
 ## Wilson's
 
 ![Wilson labyrintti](./Pictures/Labyrintit/labW.png)
 
-    Wilsonin algoritmilla tulee paljon monipuolisempia labyrinttejä täysin erilaisen generoimistavan perusteella. Silti molemmat algoritmit tuottavat ns. "täydellisiä labyrinttejä" eli kaikkiin ruutuihin pääsee kulkemaan.
+    Wilsonin algoritmilla tulee paljon monipuolisempia labyrinttejä täysin erilaisen generoimistavan perusteella. 
+    Silti molemmat algoritmit tuottavat ns. "täydellisiä labyrinttejä" eli kaikkiin ruutuihin pääsee kulkemaan.
