@@ -23,17 +23,5 @@ Alla olevasta kuvasta näkyy JUnit testien testikattavuus.
     Kattavat metodien yksikkötestit, ja testikattavuus näyttää näiden osalta hyvältä.
     
 ## Tehokkuustestit
-
-Tehokkuutta mittasin Testeri-luokan avulla, jossa suoritan molemmat algoritmit useamman kerran samoilla syötteillä (labyrintin koko).
-Labyrintin koot ovat {10, 100, 1000, 2500, 5000, 6000}. Jokaisen koon kohdalla luon uuden labyrintin ja suoritan halutun algoritmin 10 kertaa.
-Tallennan ajat taulukkoon, jonka järjestän lopussa ja valitsen lopulliseksi ajaksi taulukon mediaanin. 
-
-Testasin pyörittää tehokkuustestit myös syötteillä 10 000 ja 7000, mutta wilsonin algoritmia käytettäessä 10 000 koolla overheadia tulee liikaa ja 7000 kokoisella labyrintillä menee yli 1,5h pyörittää testit (pysäytin testit tässä vaiheessa).
-
-Mikäli haluat suorittaa tehokkuustestit omalla koneellasi, lisää nämä rivit main-metodiin.
->Testeri t = new Tester();
->
->t.testaaTehokkuudet();
-
-Linkki vertailuun tulossa.
+>Tehokkuustestien toteutuksen ja vertailun löydät [täältä](https://github.com/karppienkingi/mazeProject/blob/main/Dokumentaatio/toteutusdokumentti.md#tehokkuustestit)
 
