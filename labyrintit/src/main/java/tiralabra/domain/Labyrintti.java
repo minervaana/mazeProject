@@ -58,7 +58,7 @@ public class Labyrintti {
      * suunnan mistä siihen on tultu.
      *
      * @param r ruutu, jonka naapurit palautetaan.
-     * @return lista viereisistä ruuduista, Pari muodossa.
+     * @return lista viereisistä ruuduista, Pari-muodossa.
      */
     public Lista getNaapurit(Ruutu r) {
         Lista<Pari> lista = new Lista<>();
@@ -83,7 +83,8 @@ public class Labyrintti {
 
     /**
      * Tulostaa tämän labyrintin. Tulostaa ensin ylimmän seinän, sillä ruuduilla
-     * on vain kolme seinää.
+     * on vain kaksi seinää.
+     * Joka rivillä tulostetaan myös labyrintin vasen pystyseinä erikseen.
      */
     public void tulosta() {
         System.out.print(" ");
@@ -108,7 +109,8 @@ public class Labyrintti {
     }
 
     /**
-     * Luo sisäänkäynnit labyrinttiin. Vasen ylä- ja oikea alanurkka.
+     * Luo uloskäynnin labyrinttiin. 
+     * Oikea alanurkka.
      */
     public void luoUloskaynti() {
         Ruutu loppu = this.lab[korkeus - 1][leveys - 1];
