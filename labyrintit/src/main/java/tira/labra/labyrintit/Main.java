@@ -7,7 +7,6 @@ import tiralabra.util.Testeri;
 /**
  *
  * @author Mirka
- * @version 1.0
  */
 public class Main {
 
