@@ -76,6 +76,11 @@ public class Ruutu {
      * Tulostaa tämän ruudun seinät ja mahdolliset kulkuaukot.
      */
     public void tulostaRuutu() {
+        
+        if (!this.walls[0] && !this.walls[1]) {
+            System.out.print("  ");
+            return;
+        }
 
         if (this.walls[0]) {
             System.out.print("_");
