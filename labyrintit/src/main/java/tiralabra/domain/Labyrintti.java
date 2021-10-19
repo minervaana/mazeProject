@@ -5,29 +5,29 @@ import tiralabra.util.Pari;
 import tiralabra.util.Lista;
 
 /**
- * Labyrintin Luokka, sisältää myös algoritmit
+ * Labyrintin Luokka, sisältää myös algoritmit.
  *
  * @author Mirka
  */
 public class Labyrintti {
 
     /**
-     * labyrintin leveys
+     * labyrintin leveys.
      */
     final int leveys;
 
     /**
-     * labyrintin korkeus
+     * labyrintin korkeus.
      */
     final int korkeus;
 
     /**
-     * labyrintin ruudukko
+     * labyrintin ruudukko.
      */
     private Ruutu[][] lab;
 
     /**
-     * Luo labyrintin, joka koostuu Ruuduista
+     * Luo labyrintin, joka koostuu Ruuduista.
      *
      * @param leveys määrittää labyrintin korkeuden ja leveyden.
      */
@@ -55,10 +55,10 @@ public class Labyrintti {
 
     /**
      * Wilsonin algoritmiä varten, tämä metodi palauttaa ruudun naapurit, ja
-     * suunnan mistä siihen on tultu
+     * suunnan mistä siihen on tultu.
      *
-     * @param r ruutu, jonka naapurit palautetaan
-     * @return lista viereisistä ruuduista, Pari muodossa
+     * @param r ruutu, jonka naapurit palautetaan.
+     * @return lista viereisistä ruuduista, Pari muodossa.
      */
     public Lista getNaapurit(Ruutu r) {
         Lista<Pari> lista = new Lista<>();
@@ -83,35 +83,37 @@ public class Labyrintti {
 
     /**
      * Tulostaa tämän labyrintin. Tulostaa ensin ylimmän seinän, sillä ruuduilla
-     * on vain kolme seinää
+     * on vain kolme seinää.
      */
     public void tulosta() {
-        for (int i = 0; i < this.leveys; i++) {
-            System.out.print(" _ ");
+        System.out.print(" ");
+        for (int i = 0; i < this.leveys * 2 - 1; i++) {
+            System.out.print("_");
         }
+
         System.out.println("");
+
         for (int i = 0; i < this.leveys; i++) {
+            if (i == 0) {
+                System.out.print(" ");
+            } else {
+                System.out.print("|");
+            }
             for (int j = 0; j < this.korkeus; j++) {
                 Ruutu r = this.lab[i][j];
                 r.tulostaRuutu();
-                if (j == this.korkeus - 1) {
-                    System.out.println("");
-                }
-
             }
+            System.out.println("");
         }
     }
-    
+
     /**
-     * Luo sisäänkäynnit labyrinttiin.
-     * Vasen ylä- ja oikea alanurkka.
+     * Luo sisäänkäynnit labyrinttiin. Vasen ylä- ja oikea alanurkka.
      */
-    public void luoSisaankaynnit() {
-        Ruutu alku = this.lab[0][0];
+    public void luoUloskaynti() {
         Ruutu loppu = this.lab[korkeus - 1][leveys - 1];
-        
-        alku.poistaSeina(0);
-        loppu.poistaSeina(2);
+
+        loppu.poistaSeina(1);
     }
 
     /**
@@ -119,9 +121,9 @@ public class Labyrintti {
      * sokkelon Lisäksi poistaa alku- ja loppuseinän
      */
     public void sideWinder() {
-        luoSisaankaynnit();
+        luoUloskaynti();
         Random random = new Random();
-        
+
         for (int i = 0; i < this.korkeus; i++) {
             int startti = 0; // joka rivillä aloitetaan reitin luominen ensimmäisestä ruudusta
 
@@ -131,15 +133,12 @@ public class Labyrintti {
                 if (i > 0 && (j + 1 == this.leveys || r1 == 0)) { //kaivetaan pohjoiseen
                     int r2 = random.nextInt(j - startti + 1);
                     Ruutu valittu = lab[i - 1][startti + r2];   // Poistetaan pohjoinen seinä, eli ylemmän ruudun alin seinä
-                    valittu.poistaSeina(1); 
+                    valittu.poistaSeina(0);
                     startti = j + 1; // jatketaan algoritmiä seuraavasta rivin ruudusta
-                    
+
                 } else if (j + 1 < this.leveys) { // kaivetaan itään
                     Ruutu nyt = this.lab[i][j];
-                    Ruutu seuraava = this.lab[i][j + 1];
-                    nyt.poistaSeina(2); // täytyy poistaa tämän ruudun itäinen ja seuraavan läntinen seinä, jotta kulkureitti syntyy.
-                    seuraava.poistaSeina(0);
-
+                    nyt.poistaSeina(1); // täytyy poistaa tämän ruudun itäinen ja seuraavan läntinen seinä, jotta kulkureitti syntyy.
                 }
             }
         }
@@ -152,7 +151,7 @@ public class Labyrintti {
      */
     public void wilsons() {
 
-        luoSisaankaynnit();
+        luoUloskaynti();
 
         int[][] polku = new int[this.korkeus][this.leveys];
         Boolean[][] kayty = new Boolean[this.korkeus][this.leveys];
@@ -166,8 +165,10 @@ public class Labyrintti {
 
         Random y = new Random();
         Random x = new Random();
+
         Ruutu alustus = this.lab[y.nextInt(this.korkeus)][x.nextInt(this.leveys)];
         Ruutu nyt = alustus;
+
         kayty[alustus.getY()][alustus.getX()] = true; // merkataan alustusruutu labyrinttiin kuuluvaksi. 
 
         int jaljella = this.korkeus * this.leveys - 1; // Labyrintissä olevien ruutujen määrä, jotka eivät kuulu lopulliseen labyrinttiin.
@@ -204,7 +205,7 @@ public class Labyrintti {
 
             Ruutu seuraava = alustus; // apuruutu polun läpikäymiseen.
 
-            while (true) { 
+            while (true) {
                 // Polkua käydään läpi alusta lähtien. Liikutaan polusta saatavan suunnan mukaan, ja poistetaan seiniä sitä mukaan.
                 // vähennetään aina jäljellä olevia ruutuja, ja lisätään kaytytaulukkoon ruudut.
 
@@ -212,27 +213,25 @@ public class Labyrintti {
 
                 switch (suunta) {
                     case 0:
-                        this.lab[seuraava.getY()][seuraava.getX()].poistaSeina(0);
-                        this.lab[seuraava.getY()][seuraava.getX() - 1].poistaSeina(2);
+                        this.lab[seuraava.getY()][seuraava.getX() - 1].poistaSeina(1);
                         kayty[seuraava.getY()][seuraava.getX()] = true;
                         jaljella--;
                         seuraava = this.lab[seuraava.getY()][seuraava.getX() - 1];
                         break;
                     case 1:
-                        this.lab[seuraava.getY()][seuraava.getX()].poistaSeina(1);
+                        this.lab[seuraava.getY()][seuraava.getX()].poistaSeina(0);
                         kayty[seuraava.getY()][seuraava.getX()] = true;
                         jaljella--;
                         seuraava = this.lab[seuraava.getY() + 1][seuraava.getX()];
                         break;
                     case 2:
-                        this.lab[seuraava.getY()][seuraava.getX()].poistaSeina(2);
-                        this.lab[seuraava.getY()][seuraava.getX() + 1].poistaSeina(0);
+                        this.lab[seuraava.getY()][seuraava.getX()].poistaSeina(1);
                         kayty[seuraava.getY()][seuraava.getX()] = true;
                         jaljella--;
                         seuraava = this.lab[seuraava.getY()][seuraava.getX() + 1];
                         break;
                     case 3:
-                        this.lab[seuraava.getY() - 1][seuraava.getX()].poistaSeina(1);
+                        this.lab[seuraava.getY() - 1][seuraava.getX()].poistaSeina(0);
                         kayty[seuraava.getY()][seuraava.getX()] = true;
                         jaljella--;
                         seuraava = this.lab[seuraava.getY() - 1][seuraava.getX()];

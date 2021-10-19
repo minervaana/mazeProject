@@ -47,7 +47,7 @@ public class LabyrinttiTest {
         for (int i = 0; i < tulos.koko(); i++) {
             if (!odotettu.arvo(i).getRuutu().onSama(tulos.arvo(i).getRuutu()) && odotettu.arvo(i).getSuunta() != tulos.arvo(i).getSuunta()) {
                 sama = false;
-            }        
+            }
         }
         assertTrue(sama);
 
@@ -90,7 +90,6 @@ public class LabyrinttiTest {
                 }
                 haeNaapurit(l, r, lista);
             }
-            
 
         }
 
@@ -108,22 +107,24 @@ public class LabyrinttiTest {
      */
     private void haeNaapurit(Labyrintti l, Ruutu r, Lista<Ruutu> lista) {
 
-        if (r.getY() + 1 < l.leveys && !r.getSeinat()[1]) {
+        if (r.getY() + 1 < l.leveys && !r.getSeinat()[0]) {
             lista.lisaa(l.getRuutu(r.getY() + 1, r.getX()));
         }
-        if (r.getX() - 1 >= 0 && !r.getSeinat()[0]) {
-            lista.lisaa(l.getRuutu(r.getY(), r.getX() - 1));
+        if (r.getX() - 1 >= 0) {
+            Ruutu edellinen = l.getRuutu(r.getY(), r.getX() - 1);
+            if (!edellinen.getSeinat()[1]) {
+                lista.lisaa(l.getRuutu(r.getY(), r.getX() - 1));
+            }
         }
-        if (r.getX() + 1 < l.leveys && !r.getSeinat()[2]) {
+        if (r.getX() + 1 < l.leveys && !r.getSeinat()[1]) {
             lista.lisaa(l.getRuutu(r.getY(), r.getX() + 1));
         }
         if (r.getY() - 1 >= 0) {
             Ruutu ylempi = l.getRuutu(r.getY() - 1, r.getX());
-            if (!ylempi.getSeinat()[1]) {
+            if (!ylempi.getSeinat()[0]) {
                 lista.lisaa(l.getRuutu(r.getY() - 1, r.getX()));
             }
         }
-
     }
 
     /**
@@ -161,7 +162,6 @@ public class LabyrinttiTest {
                 }
                 haeNaapurit(l, r, lista);
             }
-            
 
         }
 

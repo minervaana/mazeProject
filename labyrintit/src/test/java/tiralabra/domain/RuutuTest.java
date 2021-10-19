@@ -60,7 +60,7 @@ public class RuutuTest {
     @Test
     public void testGetSeinat() {
         System.out.println("getSeinat");
-        boolean[] odotettu = {true, true, true};
+        boolean[] odotettu = {true, true};
         boolean[] tulos = r.getSeinat();
         assertArrayEquals(odotettu, tulos);
     }
