@@ -16,11 +16,13 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner l = new Scanner(System.in);
-        boolean aja = true;
+        
 
-        while (aja) {
-            System.out.print("Kirjoita tähän luotavan labyrintin korkeus: ");
+        while (true) {
+            System.out.print("Kirjoita tähän luotavan labyrintin korkeus tai jätä tyhjäksi jos haluat lopettaa: ");
+            try {
             int size = Integer.valueOf(l.nextLine());
+            
             Labyrintti lab = new Labyrintti(size);
             System.out.println("Ennen algoritmien suorittamista, labyrintti näyttää tältä.");
             lab.tulosta();
@@ -47,12 +49,11 @@ public class Main {
                 System.out.println("");
             }
             
-            System.out.println("Haluatko lopettaa? (Kyllä, Ei)");
-            String vastaus = l.nextLine();
-            if (vastaus.equals("Kyllä")) {
-                aja = false;
-            }
             System.out.println("");
+            } catch (Exception e) {
+                System.out.println("Kokoa ei annettu, lopetetaan...");
+                break;
+            }
         }
 
         //Testeri t = new Testeri(); //tehokkuustestit, jos haluat testata poista kauttamerkit
