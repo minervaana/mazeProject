@@ -54,8 +54,8 @@ public class LabyrinttiTest {
     }
 
     /**
-     * Testaa sidewinder metodia luokasta Labyrintti. Tarkistaa, että polku
-     * löytyy labyrintin halki.
+     * Testaa sidewinder metodia luokasta Labyrintti. Tarkistaa, että jokaiseen ruutuun pääsee. 
+     * Tämä takaa myös, että labyrintti on ratkaistavissa.
      */
     @Test
     public void testSidewinder() {
@@ -67,6 +67,7 @@ public class LabyrinttiTest {
         Ruutu loppu = l.getRuutu(l.korkeus - 1, l.leveys - 1);
         Lista<Ruutu> lista = new Lista<>();
         Boolean[][] visited = new Boolean[l.leveys][l.leveys];
+        int kayty = 0;
 
         for (int i = 0; i < l.korkeus; i++) {
             for (int j = 0; j < l.leveys; j++) {
@@ -81,19 +82,15 @@ public class LabyrinttiTest {
             if (!visited[r.getY()][r.getX()]) {
 
                 visited[r.getY()][r.getX()] = true;
-
-                if (r.equals(loppu)) {
-                    assertTrue(r.equals(loppu));
-                    System.out.println("toimii");
-                    return;
-
-                }
+                kayty++;
+                
                 haeNaapurit(l, r, lista);
             }
 
         }
 
-        fail("polkua ei löytynyt");
+        int ruutuja = 100*100;
+        assertEquals(ruutuja, kayty);
 
     }
 
@@ -128,7 +125,9 @@ public class LabyrinttiTest {
     }
 
     /**
-     * Testaa wilsons metodia luokasta Labyrintti. Tarkistaa, että polku löytyy
+     * Testaa wilsons metodia luokasta Labyrintti. 
+     * Tarkistaa, että jokaiseen ruutuun pääsee.
+     * Tämä takaa myös, että labyrintti on ratkaistavissa.
      */
     @Test
     public void testWilsons() {
@@ -140,6 +139,7 @@ public class LabyrinttiTest {
         Ruutu loppu = l.getRuutu(l.korkeus - 1, l.leveys - 1);
         Lista<Ruutu> lista = new Lista<>();
         Boolean[][] visited = new Boolean[l.leveys][l.leveys];
+        int kayty = 0;
 
         for (int i = 0; i < l.korkeus; i++) {
             for (int j = 0; j < l.leveys; j++) {
@@ -154,18 +154,14 @@ public class LabyrinttiTest {
             if (!visited[r.getY()][r.getX()]) {
 
                 visited[r.getY()][r.getX()] = true;
-
-                if (r.equals(loppu)) {
-                    assertTrue(r.equals(loppu));
-                    return;
-
-                }
+                kayty++;
                 haeNaapurit(l, r, lista);
             }
 
         }
-
-        fail("polkua ei löytynyt");
+        int ruutuja = 100*100;
+        
+        assertEquals(ruutuja, kayty);
     }
 
 }
