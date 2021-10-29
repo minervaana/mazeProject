@@ -2,7 +2,7 @@
 ## JUnit testaus
 Alla olevasta kuvasta näkyy JUnit testien testikattavuus.
 
-![Testikattavuus](./Pictures/testikattavuus2.png)
+![Testikattavuus](./Pictures/testikattavuus.png)
 
 ### Käyttöliittymä ja Testeri-luokka
     Nämä on jätetty JUnit testeistä pois, sillä niitä ei ole syytä testata. 
@@ -10,7 +10,7 @@ Alla olevasta kuvasta näkyy JUnit testien testikattavuus.
     Nämä on jätetty testikattavuusraportissa huomioimatta.
     
 ### Labyrintti
-    Labyrintista testataan, että algorimtit tuottavat polut alusta loppuun, eli labyrintti on oikeasti mahdollista ratkaista.
+    Labyrintista testataan, että jokainen ruutu on mahdollista tavoittaa algoritmin suorituksen jälkeen. Tämä takaa myös että polku löytyy alusta maaliin.
     Polut on testattu useammilla eri koilla (5, 10, 20, 100), mutta tällä hetkellä testauskoko on 100.
     Tulostus- metodi on jätetty Unit testauksesta pois, mutta se on testattu monta kertaa manuaalisesti.
     Muut Labyrintti-luokan metodit on testattu kattavilla yksikkötesteillä.
