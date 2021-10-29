@@ -2,7 +2,7 @@
 ## JUnit testaus
 Alla olevasta kuvasta näkyy JUnit testien testikattavuus.
 
-![Testikattavuus](./Pictures/testikattavuus.png)
+![Testikattavuus](./Pictures/testikattavuus.PNG)
 
 ### Käyttöliittymä ja Testeri-luokka
     Nämä on jätetty JUnit testeistä pois, sillä niitä ei ole syytä testata. 
