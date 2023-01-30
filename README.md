@@ -1,6 +1,6 @@
 # Labyrinttien generointi
 
-Tietorakenteet ja algoritmit projekti.
+Helsingin yliopiston kurssi: Tietorakenteet ja algoritmit projekti.
 
 
 [määrittelydokumentti](https://github.com/karppienkingi/mazeProject/blob/main/Dokumentaatio/maarittelydokumentti.md)
